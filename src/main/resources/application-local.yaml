@@ -1,0 +1,28 @@
+server:
+  port: 8081
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5433/users
+    username: postgres
+    password: postgres_password
+  flyway:
+    url: jdbc:postgresql://localhost:5433/users
+    user: postgres
+    password: postgres_password
+    locations: classpath:db.migration.main
+  data:
+    mongodb:
+      host: localhost
+  kafka:
+    bootstrap-servers: localhost:9092
+
+logging:
+  level:
+    org.flywaydb: TRACE
+    org.hibernate.SQL: TRACE
+    org.apache:
+      kafka:
+        clients:
+          producer:
+            internals: TRACE

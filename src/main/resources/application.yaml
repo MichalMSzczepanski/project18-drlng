@@ -1,0 +1,24 @@
+spring:
+  profiles:
+    active: local
+  datasource:
+    username: postgres
+    password: postgres_password
+    driver-class-name: org.postgresql.Driver
+  flyway:
+    user: postgres
+    password: postgres_password
+    locations: classpath:db/migration/main
+  data:
+    mongodb:
+      port: 27017
+      database: users
+      username: mongo
+      password: mongo_password
+      authentication-database: admin
+
+password:
+  hashing-salt: "2b7e151628aed2a6abf7158809cf4f3c"
+
+validation:
+  email-regex: "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$"
